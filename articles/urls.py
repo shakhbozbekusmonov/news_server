@@ -2,6 +2,9 @@ from django.urls import path
 from .views import (
     CategoryApiView,
     CategoryDetailApiView,
+    CategoryCreateApiView,
+    CategoryUpdateApiView,
+    CategoryDeleteApiView,
     ArticlesListApiView,
     ArticlesCreateApiView,
     ArticlesUpdateApiView,
@@ -13,6 +16,9 @@ from .views import (
 urlpatterns = [
     path('category/', CategoryApiView.as_view()),
     path('category/<int:pk>/', CategoryDetailApiView.as_view()),
+    path('category/create/', CategoryCreateApiView.as_view()),
+    path('category/<int:pk>/update/', CategoryUpdateApiView.as_view()),
+    path('category/<int:pk>/delete/', CategoryDeleteApiView.as_view()),
     path('articles/', ArticlesListApiView.as_view()),
     path('articles/create/', ArticlesCreateApiView.as_view()),
     path('articles/<int:pk>/update/', ArticlesUpdateApiView.as_view()),
