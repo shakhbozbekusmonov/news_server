@@ -84,36 +84,36 @@ REST_FRAMEWORK = {
 
 ROOT_URLCONF = 'config.urls'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost',
-    'https://',
-]
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ALLOWED_METHODS = [
-    'GET',
-    'POST',
-    'PUT',
-    'PATCH',
-    'DELETE',
-    'OPTIONS',
-]
-
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_HEADERS = ['*']
-
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost',
-    'https://',
-
-]
-
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_HSTS_PRELOAD = True
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost',
+#     'https://',
+# ]
+#
+# CORS_ORIGIN_ALLOW_ALL = True
+#
+# CORS_ALLOWED_METHODS = [
+#     'GET',
+#     'POST',
+#     'PUT',
+#     'PATCH',
+#     'DELETE',
+#     'OPTIONS',
+# ]
+#
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_HEADERS = ['*']
+#
+# CSRF_TRUSTED_ORIGINS = [
+#     'http://localhost',
+#     'https://',
+#
+# ]
+#
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_HSTS_PRELOAD = True
+#
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 TEMPLATES = [
     {
