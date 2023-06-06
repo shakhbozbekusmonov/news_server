@@ -15,9 +15,13 @@ class Articles(models.Model):
         Draft = "DF", "Draft"
         Published = "PB", "Published"
 
-    title = models.CharField(max_length=250)
+    titleUz = models.CharField(max_length=250)
+    titleRu = models.CharField(max_length=250)
+    titleEn = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250)
-    body = models.TextField()
+    bodyUz = models.TextField()
+    bodyRu = models.TextField()
+    bodyEn = models.TextField()
     image = models.ImageField(upload_to='news/images')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     publish_time = models.DateTimeField(default=timezone.now)

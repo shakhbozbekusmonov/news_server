@@ -139,13 +139,25 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgresql://postgres:WfHshAIhiNk7jUGt0BEU@containers-us-west-19.railway.app:7489/railway')
+#     # 'default': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     # 'NAME': BASE_DIR / 'db.sqlite3',
+#     # }
+# }
+
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://postgres:8Vlo7L6oJvcOjYMBCIpi@containers-us-west-107.railway.app:7600/railway')
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     # 'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'WfHshAIhiNk7jUGt0BEU',
+        'HOST': 'containers-us-west-19.railway.app',
+        'PORT': '7489',
+    }
 }
+
 
 
 # Password validation
