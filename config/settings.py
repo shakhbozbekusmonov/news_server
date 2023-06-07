@@ -86,6 +86,8 @@ ROOT_URLCONF = 'config.urls'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
+    'http://127.0.0.1',
+    'http://127.0.0.1:5173',
     'http://news-server-v1-production.up.railway.app',
     'https://news-server-v1-production.up.railway.app',
 ]
@@ -106,6 +108,8 @@ CORS_ALLOW_HEADERS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost',
+    'http://127.0.0.1',
+    'http://127.0.0.1:5173',
     'http://news-server-v1-production.up.railway.app',
     'https://news-server-v1-production.up.railway.app',
 
