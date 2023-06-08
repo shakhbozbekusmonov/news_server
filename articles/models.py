@@ -33,5 +33,5 @@ class Articles(models.Model):
         ordering = ["-publish_time"]
 
     def __str__(self):
-        return self.title
+        return self.titleUz
 
