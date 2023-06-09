@@ -24,7 +24,7 @@ class Articles(models.Model):
     bodyEn = models.TextField()
     image = models.ImageField(upload_to='news/images')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    publish_time = models.DateTimeField(default=timezone.now)
+    publish_time = models.DateTimeField(auto_now=True)
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.Draft)
