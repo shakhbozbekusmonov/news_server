@@ -1,11 +1,12 @@
 from .models import Category, Articles
-from rest_framework import generics
+from rest_framework import generics, permissions
 from .serializers import CategorySerializer, ArticlesSerializer
 
 
 class CategoryApiView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    permission_classes = permissions.AllowAny
 
 
 class CategoryDetailApiView(generics.RetrieveAPIView):
@@ -31,6 +32,7 @@ class CategoryDeleteApiView(generics.DestroyAPIView):
 class ArticlesListApiView(generics.ListAPIView):
     queryset = Articles.objects.all()
     serializer_class = ArticlesSerializer
+    permission_classes = permissions.AllowAny
 
 
 class ArticlesCreateApiView(generics.CreateAPIView):
