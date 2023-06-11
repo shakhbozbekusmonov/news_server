@@ -16,6 +16,8 @@ drf-yasg = "*"
 dj-config-url = "*"
 psycopg2 = "*"
 python-dotenv = "*"
+django-redis = "*"
+deta = "*"
 
 [dev-packages]
 

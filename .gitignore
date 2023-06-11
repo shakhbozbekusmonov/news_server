@@ -4,3 +4,5 @@
 # Ignore other sensitive files
 filename.ext
 folder/
+
+.space
