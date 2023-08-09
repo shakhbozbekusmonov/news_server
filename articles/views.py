@@ -1,3 +1,4 @@
+from django.db.models import Q
 from .models import Category, Articles
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
@@ -31,9 +32,25 @@ class CategoryDeleteApiView(generics.DestroyAPIView):
 
 
 class ArticlesListApiView(generics.ListAPIView):
-    queryset = Articles.objects.all()
     serializer_class = ArticlesSerializer
     permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        queryset = Articles.objects.filter(status="PB")
+        search_query = self.request.query_params.get('q')
+
+        if search_query:
+            queryset = queryset.filter(
+                Q(titleUz__icontains=search_query) |
+                Q(titleRu__icontains=search_query) |
+                Q(titleEn__icontains=search_query)
+            )
+        return queryset
+
+
+class ArticlesAdminListApiView(generics.ListAPIView):
+    queryset = Articles.objects.all()
+    serializer_class = ArticlesSerializer
 
 
 class ArticlesCreateApiView(generics.CreateAPIView):

@@ -3,10 +3,12 @@ from django.utils import timezone
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=150)
+    nameUz = models.CharField(max_length=150)
+    nameRu = models.CharField(max_length=150)
+    nameEn = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.name
+        return self.nameUz
 
 
 class Articles(models.Model):
