@@ -1,8 +1,6 @@
 import os
 from pathlib import Path
-from decouple import config
-
-
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,8 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-DEBUG = config('DEBUG', default=False, cast=bool)
-SECRET_KEY = config('SECRET_KEY')
+DEBUG = False
+SECRET_KEY = 'django-insecure-xdz+t=j$w==^4!(7=*(be^6+@oh6i#zqr9sdc1+%w*8(26m_$3'
 
 ALLOWED_HOSTS = ["*"]
 
@@ -39,7 +37,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'whitenoise.runserver_nostatic',
     'drf_yasg',
-    'redis',
 
     # local apps
     'articles',
@@ -130,7 +127,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': config('DATABASE_URL', default='sqlite:///db.sqlite3')
+    'default': dj_database_url.config(default="postgresql://postgres:EQoinn76yecT2ffANN5d@containers-us-west-105.railway.app:7849/railway")
 }
 
 

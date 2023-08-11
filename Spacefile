@@ -3,5 +3,5 @@ v: 0
 micros:
   - name: news-server
     src: ./
-    engine: python3.9
+    engine: python3.11
     primary: true
