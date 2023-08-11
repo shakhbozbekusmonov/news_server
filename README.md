@@ -12,6 +12,7 @@ Explain how authentication works in your API and provide details about the authe
 Description: Logs in a user and returns an authentication token.
 
 Request:
+
 ```
 json
 Copy code
@@ -20,6 +21,7 @@ Copy code
   "password": "your_password"
 }
 ```
+
 Response:
 ```
 json
@@ -35,14 +37,16 @@ Description: Logs out the user and deletes the associated token.
 Description: Allows the user to change their password.
 
 Request:
+
 ```
 json
 Copy code
 {
   "old_password": "your_old_password",
   "new_password": "your_new_password"
-}```
+}
 ...
+```
 Provide similar explanations for other authentication endpoints.
 
 ## Articles
@@ -52,6 +56,7 @@ Explain the endpoints related to articles.
 Description: Retrieves a list of articles.
 
 Response:
+
 ```
 json
 Copy code
@@ -62,7 +67,8 @@ Copy code
     ...
   },
   ...
-]```
+]
+```
 ## GET api/v1/articles/admin/
 Description: Retrieves a list of articles for admin users.
 
@@ -76,7 +82,8 @@ Copy code
 {
   "title": "New Article",
   ...
-}```
+}
+```
 Response:
 ```
 json
@@ -85,8 +92,9 @@ Copy code
   "id": 123,
   "title": "New Article",
   ...
-}```
+}
 ...
+```
 Continue with explanations for other article-related endpoints.
 
 ## Categories
@@ -106,8 +114,8 @@ Copy code
     ...
   },
   ...
-]```
-
+]
+```
 ### POST api/v1/category/create/
 Description: Creates a new category.
 
@@ -118,7 +126,8 @@ Copy code
 {
   "name": "New Category",
   ...
-}```
+}
+```
 Response:
 ```
 json
@@ -127,8 +136,9 @@ Copy code
   "id": 456,
   "name": "New Category",
   ...
-}```
+}
 ...
+```
 Continue with explanations for other category-related endpoints.
 
 ## API Documentation
