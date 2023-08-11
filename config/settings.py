@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import dj_database_url
+from decouple import config
 
 
 
@@ -11,11 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xdz+t=j$w==^4!(7=*(be^6+@oh6i#zqr9sdc1+%w*8(26m_$3'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
+SECRET_KEY = config('SECRET_KEY')
 
 ALLOWED_HOSTS = ["*"]
 
@@ -31,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # packages
+    # 3 party packages
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
@@ -63,7 +60,6 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-        # 'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -134,11 +130,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': dj_database_url.config(default='postgresql://postgres:dqFE0BBj5ZaBe7vaLNDK@containers-us-west-159.railway.app:5893/railway')
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': config('DATABASE_URL', default='sqlite:///db.sqlite3')
 }
 
 
